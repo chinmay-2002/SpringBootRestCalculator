@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations [CALCULATOR USING REST]</title>
+    <style>
+
+
+.container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+input[type="number"], button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+input[type="number"] {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input[type="number"]:focus {
+    border-color: #4CAF50;
+    outline: 0;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+
+button:hover {
+    background-color: #45a049;
+}
+
+.result {
+    font-weight: bold;
+}
+    
+    
+    </style>
+</head>
+<body>
+    <div class = container>
+    <h1>Arithmetic Operations [CALCULATOR USING REST]	</h1>
+    
+    <h2>Addition</h2>
+    <form th:action="@{/add}" method="get">
+        <input type="number" name="num1" placeholder="Enter first number">
+        <input type="number" name="num2" placeholder="Enter second number">
+        <button type="submit">Calculate</button>
+        <span th:text="${result}"></span>
+    </form>
+    
+    <h2>Subtraction</h2>
+    <form th:action="@{/subtract}" method="get">
+        <input type="number" name="num1" placeholder="Enter first number">
+        <input type="number" name="num2" placeholder="Enter second number">
+        <button type="submit">Calculate</button>
+        <span th:text="${result}"></span>
+    </form>
+    
+    <h2>Multiplication</h2>
+    <form th:action="@{/multiply}" method="get">
+        <input type="number" name="num1" placeholder="Enter first number">
+        <input type="number" name="num2" placeholder="Enter second number">
+        <button type="submit">Calculate</button>
+        <span th:text="${result}"></span>
+    </form>
+    
+    <h2>Division</h2>
+    <form th:action="@{/divide}" method="get">
+        <input type="number" name="num1" placeholder="Enter first number">
+        <input type="number" name="num2" placeholder="Enter second number">
+        <button type="submit">Calculate</button>
+        <span th:text="${result}"></span>
+    </form>
+    
+    </div>
+</body>
+</html>
